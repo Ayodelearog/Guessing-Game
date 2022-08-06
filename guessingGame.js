@@ -12,5 +12,19 @@ function magicGuessMachine() {
     return realGuess;
 }
 
-var total = magicGuessMachine();
-alert("The answer is " + total);
+var view = {
+    displayMessage: function() {
+        var messageArea = document.getElementById("messageArea");
+        //messageArea.innerText = magicGuessMachine;
+    }
+}
+
+function play() {
+    var button = document.getElementById("button");
+    button.addEventListener("click", magicGuessMachine);
+    view.displayMessage();
+}
+//var total = magicGuessMachine();
+//alert("The answer is " + total);
+
+window.onload = play;
